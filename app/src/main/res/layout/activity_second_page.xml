@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/aMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/already_a_member"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="58dp"
+        android:textSize="13sp"
+        />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@id/aMember"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="-250dp"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:background="@color/purple"
+        android:textSize="20sp"
+        />
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/by_checking"
+        android:textSize="10sp"
+        android:buttonTint="#CBCBCB"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/next"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="44dp"
+        />
+
+    <ImageView
+        android:src="@drawable/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        app:layout_constraintBottom_toTopOf="@id/name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
+        />
+
+    <TextView
+        android:id="@+id/sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/by_creating"
+        app:layout_constraintBottom_toTopOf="@id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="60dp"
+        android:textSize="14sp"
+        android:textColor="#252525"
+        />
+
+    <TextView
+        android:id="@+id/getstarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_started"
+        app:layout_constraintBottom_toTopOf="@id/sign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="@string/strong_password"
+        android:textSize="14sp"
+        android:paddingStart="22dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@id/checkbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="5dp"
+        android:drawableEnd="@drawable/lock"
+        android:paddingEnd="18dp"
+        />
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="@string/phone_number"
+        android:textSize="14sp"
+        android:paddingStart="22dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="19dp"
+        android:drawableEnd="@drawable/smartphone"
+        android:paddingEnd="18dp"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="@string/valid_email"
+        android:textSize="14sp"
+        android:paddingStart="22dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@id/number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="19dp"
+        android:drawableEnd="@drawable/mail"
+        android:paddingEnd="18dp"
+        />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="@string/full_name"
+        android:textSize="14sp"
+        android:paddingStart="22dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="19dp"
+        android:drawableEnd="@drawable/user"
+        android:paddingEnd="18dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
