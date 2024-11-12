@@ -9,29 +9,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class activity_second_page : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_second_page)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val registerNowLabel = findViewById<TextView>(R.id.newMember)
+        val registerNowLabel = findViewById<TextView>(R.id.aMember)
 
-        registerNowLabel.setOnClickListener {
+        registerNowLabel.setOnClickListener{
 
-            Log.d("Onboarding", "Register now pressed")
+            Log.d("Onboarding", "Log in pressed")
 
-            val goToRegisterIntent = Intent(this@MainActivity, activity_second_page::class.java)
+            val goToRegisterIntent = Intent(this@activity_second_page, MainActivity::class.java)
             startActivity(goToRegisterIntent)
         }
-
-
-
-
     }
 }
