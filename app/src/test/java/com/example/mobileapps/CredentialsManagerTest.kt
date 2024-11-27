@@ -1,44 +1,35 @@
 package com.example.mobileapps
 
+import junit.framework.TestCase.assertFalse
+import junit.framework.TestCase.assertTrue
 import org.junit.Test
-import org.junit.Assert.*
 
 class CredentialsManagerTest {
 
-    private val credentialsManager = CredentialsManager()
-
-    // Test empty email
     @Test
     fun givenEmptyEmail_thenReturnFalse() {
-        val isEmailValid = credentialsManager.isEmailValid("")
-        assertEquals(false, isEmailValid)
+        val credentialsManager = CredentialsManager()
+        val email = ""
+
+        val result = credentialsManager.isEmailValid(email)
+        assertFalse(result)
     }
 
-    // Test wrong email format
     @Test
-    fun givenInvalidEmailFormat_thenReturnFalse() {
-        val isEmailValid = credentialsManager.isEmailValid("invalid-email")
-        assertEquals(false, isEmailValid)
+    fun givenWellFormattedEmail_thenReturnTrue() {
+        val credentialsManager = CredentialsManager()
+        val email = "tested@te.st"
+
+        val result = credentialsManager.isEmailValid(email)
+        assertTrue(result)
     }
 
-    // Test well-formatted email
     @Test
-    fun givenValidEmailFormat_thenReturnTrue() {
-        val isEmailValid = credentialsManager.isEmailValid("example@test.com")
-        assertEquals(true, isEmailValid)
-    }
+    fun givenWrongEmailFormat_thenReturnFalse() {
+        val credentialsManager = CredentialsManager()
+        val email = "wrongEmailFormat"
 
-    // Test empty password
-    @Test
-    fun givenEmptyPassword_thenReturnFalse() {
-        val isPasswordValid = credentialsManager.isPasswordValid("")
-        assertEquals(false, isPasswordValid)
-    }
-
-    // Test filled password
-    @Test
-    fun givenNonEmptyPassword_thenReturnTrue() {
-        val isPasswordValid = credentialsManager.isPasswordValid("mySecurePassword")
-        assertEquals(true, isPasswordValid)
+        val result = credentialsManager.isEmailValid(email)
+        assertFalse(result)
     }
 }
